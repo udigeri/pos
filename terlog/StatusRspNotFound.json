@@ -1,0 +1,20 @@
+{
+  "SaleToPOIResponse": {
+    "MessageHeader": {
+      "MessageCategory": "TransactionStatus",
+      "MessageClass": "Service",
+      "MessageType": "Response",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac",
+      "ServiceID": "33"
+    },
+    "TransactionStatusResponse": {
+      "Response": {
+        "AdditionalResponse": "note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only&message=Message%20not%20found%20Category%5bPayment%5d%2c%20last%20such%20Request%20has%20SaleID%3d%5bPOSiMac%5d%20ServiceID%3d%5b21%5d",
+        "ErrorCondition": "NotFound",
+        "Result": "Failure"
+      }
+    }
+  }
+}

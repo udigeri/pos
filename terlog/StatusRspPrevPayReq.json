@@ -1,0 +1,56 @@
+{
+  "SaleToPOIResponse": {
+    "MessageHeader": {
+      "MessageCategory": "TransactionStatus",
+      "MessageClass": "Service",
+      "MessageType": "Response",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac",
+      "ServiceID": "83"
+    },
+    "TransactionStatusResponse": {
+      "MessageReference": {
+        "MessageCategory": "Payment",
+        "SaleID": "POSiMac",
+        "ServiceID": "81"
+      },
+      "RepeatedMessageResponse": {
+        "MessageHeader": {
+          "MessageCategory": "Payment",
+          "MessageClass": "Service",
+          "MessageType": "Response",
+          "POIID": "P400Plus-804232069",
+          "ProtocolVersion": "3.0",
+          "SaleID": "POSiMac",
+          "ServiceID": "81"
+        },
+        "RepeatedResponseMessageBody": {
+          "PaymentResponse": {
+            "POIData": {
+              "POITransactionID": {
+                "TimeStamp": "2022-02-04T18:35:16.528Z",
+                "TransactionID": "DTPS001643999716001"
+              }
+            },
+            "Response": {
+              "AdditionalResponse": "serviceId=71&note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only&message=Forbidden%20Request%2c%20Service%20Dialogue%20PaymentRequest%20is%20in%20Progress",
+              "ErrorCondition": "NotAllowed",
+              "Result": "Failure"
+            },
+            "SaleData": {
+              "SaleTransactionID": {
+                "TimeStamp": "2022-02-04T18:35:16.070Z",
+                "TransactionID": "81"
+              }
+            }
+          }
+        }
+      },
+      "Response": {
+        "AdditionalResponse": "note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only",
+        "Result": "Success"
+      }
+    }
+  }
+}

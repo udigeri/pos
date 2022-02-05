@@ -1,0 +1,77 @@
+* Preparing request to https://192.168.1.6:8443/nexo
+* Current time is 2022-02-04T18:22:51.337Z
+* Using libcurl/7.73.0-DEV OpenSSL/1.1.1g zlib/1.2.11 brotli/1.0.9 WinIDN libssh2/1.9.0_DEV nghttp2/1.41.0
+* Using default HTTP version
+* Disable timeout
+* Enable automatic URL encoding
+* Disable SSL validation
+* Enable cookie sending with jar of 0 cookies
+* Found bundle for host 192.168.1.6: 0x1837ec46630 [serially]
+* Can not multiplex, even if we wanted to!
+* Hostname 192.168.1.6 was found in DNS cache
+*   Trying 192.168.1.6:8443...
+* Connected to 192.168.1.6 (192.168.1.6) port 8443 (#30)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*  CAfile: C:\Users\HUDAK~1.PAV\AppData\Local\Temp\insomnia_2021.7.2\ca-certs.pem
+*  CApath: none
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+* SSL connection using TLSv1.2 / AES256-GCM-SHA384
+* ALPN, server did not agree to a protocol
+* Server certificate:
+*  subject: emailAddress=possupport@adyen.com; CN=p400plus-804232069.test.terminal.adyen.com; OU=POS Support (test); O=Adyen NV; L=Amsterdam; ST=NH; C=NL
+*  start date: Dec  2 12:35:19 2021 GMT
+*  expire date: Mar  6 12:35:19 2024 GMT
+*  issuer: C=NL; ST=NH; O=Adyen B.V.; OU=Adyen CA; CN=Adyen Test Terminal Fleet Intermediate CA 1; emailAddress=possupport@adyen.com
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+
+> POST /nexo HTTP/1.1
+> Host: 192.168.1.6:8443
+> User-Agent: insomnia/2021.7.2
+> Content-Type: application/json
+> Accept: */*
+> Content-Length: 460
+
+| {
+|   "SaleToPOIRequest":{
+|     "MessageHeader":{
+|       "ProtocolVersion":"3.0",
+|       "MessageClass":"Service",
+|       "MessageCategory":"Abort",
+|       "MessageType":"Request",
+|       "SaleID":"POSiMac",
+|       "ServiceID":"42",
+|       "POIID":"P400Plus-804232069"
+|     },
+|     "AbortRequest":{
+|       "AbortReason":"MerchantAbort",
+|       "MessageReference":{
+|         "MessageCategory":"Payment",
+|         "SaleID":"POSiMac",
+|         "ServiceID":"41"
+|       }
+|     }
+|   }
+| }
+
+* upload completely sent off: 460 out of 460 bytes
+* Mark bundle as not supporting multiuse
+
+< HTTP/1.1 200 OK
+< Date: Fri, 04 Feb 2022 18:22:51 GMT
+< Connection: keep-alive
+< Server: Adyen/webserver
+< Content-type: application/json; charset=utf-8
+< transfer-encoding: chunked
+
+
+* Received 5 B chunk
+* Connection #30 to host 192.168.1.6 left intact

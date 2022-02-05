@@ -1,0 +1,27 @@
+{
+  "SaleToPOIRequest": {
+    "MessageHeader": {
+      "ProtocolVersion": "3.0",
+      "MessageClass": "Service",
+      "MessageCategory": "Payment",
+      "MessageType": "Request",
+      "SaleID": "POSiMac",
+      "ServiceID": "31",
+      "POIID": "P400Plus-804232069"
+    },
+    "PaymentRequest": {
+      "SaleData": {
+        "SaleTransactionID": {
+          "TransactionID": "31",
+          "TimeStamp": "{% now 'iso-8601', '' %}"
+        }
+      },
+      "PaymentTransaction": {
+        "AmountsReq": {
+          "Currency": "EUR",
+          "RequestedAmount": 1.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "SaleToPOIRequest": {
+    "DisplayRequest": {
+      "DisplayOutput": [
+        {
+          "Device": "CashierDisplay",
+          "InfoQualify": "Status",
+          "OutputContent": {
+            "OutputFormat": "MessageRef",
+            "PredefinedContent": { "ReferenceID": "event=CARD_PRESENTED" }
+          },
+          "ResponseRequiredFlag": false
+        }
+      ]
+    },
+    "MessageHeader": {
+      "DeviceID": "12",
+      "MessageCategory": "Display",
+      "MessageClass": "Device",
+      "MessageType": "Request",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac",
+      "ServiceID": "231"
+    }
+  }
+}

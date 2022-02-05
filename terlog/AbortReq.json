@@ -1,0 +1,21 @@
+{
+  "SaleToPOIRequest": {
+    "MessageHeader": {
+      "ProtocolVersion": "3.0",
+      "MessageClass": "Service",
+      "MessageCategory": "Abort",
+      "MessageType": "Request",
+      "SaleID": "POSiMac",
+      "ServiceID": "42",
+      "POIID": "P400Plus-804232069"
+    },
+    "AbortRequest": {
+      "AbortReason": "MerchantAbort",
+      "MessageReference": {
+        "MessageCategory": "Payment",
+        "SaleID": "POSiMac",
+        "ServiceID": "41"
+      }
+    }
+  }
+}

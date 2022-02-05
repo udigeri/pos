@@ -1,0 +1,207 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2022-02-04T18:09:54.159Z",
+    "__export_source": "insomnia.desktop.app:v2021.7.2",
+    "resources": [
+        {
+            "_id": "req_196bc9eb032b43158b623efcd2ebf5c7",
+            "parentId": "wrk_5a4a24311e5d43169a3272588216138d",
+            "modified": 1643991384063,
+            "created": 1643888808117,
+            "url": "{{ _.scheme }}://{{ _.host }}:{{ _.port }}/{{ _.base_url }}",
+            "name": "Pay",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"SaleToPOIRequest\": {\n\t\t\"MessageHeader\": {\n\t\t\t\"ProtocolVersion\": \"3.0\",\n\t\t\t\"MessageClass\": \"Service\",\n\t\t\t\"MessageCategory\": \"Payment\",\n\t\t\t\"MessageType\": \"Request\",\n\t\t\t\"SaleID\": \"POSiMac\",\n\t\t\t\"ServiceID\": \"21\",\n\t\t\t\"POIID\": \"P400Plus-804232069\"\n\t\t},\n\t\t\"PaymentRequest\": {\n\t\t\t\"SaleData\": {\n\t\t\t\t\"SaleTransactionID\": {\n\t\t\t\t\t\"TransactionID\": \"21\",\n\t\t\t\t\t\"TimeStamp\": \"{% now 'iso-8601', '' %}\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"PaymentTransaction\": {\n\t\t\t\t\"AmountsReq\": {\n\t\t\t\t\t\"Currency\": \"EUR\",\n\t\t\t\t\t\"RequestedAmount\": 1.00\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_98db0a7f989b45279457af5d3d46af85"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 0,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_5a4a24311e5d43169a3272588216138d",
+            "parentId": null,
+            "modified": 1643962239762,
+            "created": 1643888741044,
+            "name": "Adyen",
+            "description": "POS terminal",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_e4c63b8ea5224e30a3946286c4bc9b9f",
+            "parentId": "wrk_5a4a24311e5d43169a3272588216138d",
+            "modified": 1643998115697,
+            "created": 1643977597620,
+            "url": "{{ _.scheme }}://{{ _.host }}:{{ _.port }}/{{ _.base_url }}",
+            "name": "Abort",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"SaleToPOIRequest\":{\n    \"MessageHeader\":{\n      \"ProtocolVersion\":\"3.0\",\n      \"MessageClass\":\"Service\",\n      \"MessageCategory\":\"Abort\",\n      \"MessageType\":\"Request\",\n      \"SaleID\":\"POSiMac\",\n      \"ServiceID\":\"22\",\n      \"POIID\":\"P400Plus-804232069\"\n    },\n    \"AbortRequest\":{\n      \"AbortReason\":\"MerchantAbort\",\n      \"MessageReference\":{\n        \"MessageCategory\":\"Payment\",\n        \"SaleID\":\"POSiMac\",\n        \"ServiceID\":\"21\"\n      }\n    }\n  }\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_98db0a7f989b45279457af5d3d46af85"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 25,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_4b795786f0294ef49272e0f0fe7f778e",
+            "parentId": "wrk_5a4a24311e5d43169a3272588216138d",
+            "modified": 1643998159904,
+            "created": 1643896776190,
+            "url": "{{ _.scheme }}://{{ _.host }}:{{ _.port }}/{{ _.base_url }}",
+            "name": "Status",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"SaleToPOIRequest\": {\n    \"MessageHeader\": {\n      \"ProtocolVersion\": \"3.0\",\n      \"MessageClass\": \"Service\",\n      \"MessageCategory\": \"TransactionStatus\",\n      \"MessageType\": \"Request\",\n      \"SaleID\": \"POSiMac\",\n      \"ServiceID\": \"23\",\n      \"POIID\": \"P400Plus-804232069\"\n    },\n    \"TransactionStatusRequest\": {\n      \"ReceiptReprintFlag\": true,\n      \"DocumentQualifier\": [\n        \"CashierReceipt\",\n        \"CustomerReceipt\"\n      ],\n      \"MessageReference\": {\n        \"SaleID\": \"POSiMac\",\n        \"ServiceID\": \"21\",\n        \"MessageCategory\": \"Payment\"\n      }\n    }\n  }\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_98db0a7f989b45279457af5d3d46af85",
+                    "disabled": false
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": 50,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_dc73bb36491cf03f188c528a7b0efc4da3c794c4",
+            "parentId": "wrk_5a4a24311e5d43169a3272588216138d",
+            "modified": 1643895171015,
+            "created": 1643888741057,
+            "name": "Base Environment",
+            "data": {
+                "protocol": "http"
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "protocol"
+                ]
+            },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1643888741057,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_dc73bb36491cf03f188c528a7b0efc4da3c794c4",
+            "parentId": "wrk_5a4a24311e5d43169a3272588216138d",
+            "modified": 1643888741061,
+            "created": 1643888741061,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_3cb646dfab404093b052228a58210b40",
+            "parentId": "wrk_5a4a24311e5d43169a3272588216138d",
+            "modified": 1643888741048,
+            "created": 1643888741048,
+            "fileName": "Adyen",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "env_326501fcf78140d595e169385009ce5f",
+            "parentId": "env_dc73bb36491cf03f188c528a7b0efc4da3c794c4",
+            "modified": 1643961600377,
+            "created": 1643895227307,
+            "name": "Adyen Test env",
+            "data": {
+                "scheme": "https",
+                "host": "192.168.1.6",
+                "port": "8443",
+                "base_url": "nexo",
+                "base_path": ""
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "scheme",
+                    "host",
+                    "port",
+                    "base_url",
+                    "base_path"
+                ]
+            },
+            "color": "#3282ec",
+            "isPrivate": false,
+            "metaSortKey": 1643895227307,
+            "_type": "environment"
+        },
+        {
+            "_id": "env_14e7b0a317e44aaab4262af0b3e7c00c",
+            "parentId": "env_dc73bb36491cf03f188c528a7b0efc4da3c794c4",
+            "modified": 1643897535390,
+            "created": 1643896713460,
+            "name": "Adyen Prod env",
+            "data": {
+                "scheme": "https",
+                "host": "192.168.1.6",
+                "port": "443",
+                "base_url": "nexo",
+                "base_path": ""
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "scheme",
+                    "host",
+                    "port",
+                    "base_url",
+                    "base_path"
+                ]
+            },
+            "color": "#32ec57",
+            "isPrivate": false,
+            "metaSortKey": 1643895227357,
+            "_type": "environment"
+        }
+    ]
+}

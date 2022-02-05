@@ -1,0 +1,29 @@
+{
+  "SaleToPOIRequest": {
+    "DisplayRequest": {
+      "DisplayOutput": [
+        {
+          "Device": "CashierDisplay",
+          "InfoQualify": "Status",
+          "OutputContent": {
+            "OutputFormat": "MessageRef",
+            "PredefinedContent": {
+              "ReferenceID": "TimeStamp=2022-02-05T10%3a53%3a37.000Z&TransactionID=DTPS001644058417002&event=TENDER_CREATED"
+            }
+          },
+          "ResponseRequiredFlag": false
+        }
+      ]
+    },
+    "MessageHeader": {
+      "DeviceID": "TC8",
+      "MessageCategory": "Display",
+      "MessageClass": "Device",
+      "MessageType": "Request",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac",
+      "ServiceID": "221"
+    }
+  }
+}

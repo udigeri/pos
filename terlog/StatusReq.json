@@ -1,0 +1,22 @@
+{
+  "SaleToPOIRequest": {
+    "MessageHeader": {
+      "ProtocolVersion": "3.0",
+      "MessageClass": "Service",
+      "MessageCategory": "TransactionStatus",
+      "MessageType": "Request",
+      "SaleID": "POSiMac",
+      "ServiceID": "33",
+      "POIID": "P400Plus-804232069"
+    },
+    "TransactionStatusRequest": {
+      "ReceiptReprintFlag": true,
+      "DocumentQualifier": ["CashierReceipt", "CustomerReceipt"],
+      "MessageReference": {
+        "SaleID": "POSiMac",
+        "ServiceID": "31",
+        "MessageCategory": "Payment"
+      }
+    }
+  }
+}

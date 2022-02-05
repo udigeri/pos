@@ -1,0 +1,356 @@
+{
+  "SaleToPOIResponse": {
+    "MessageHeader": {
+      "MessageCategory": "TransactionStatus",
+      "MessageClass": "Service",
+      "MessageType": "Response",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac",
+      "ServiceID": "53"
+    },
+    "TransactionStatusResponse": {
+      "MessageReference": {
+        "MessageCategory": "Payment",
+        "SaleID": "POSiMac",
+        "ServiceID": "51"
+      },
+      "RepeatedMessageResponse": {
+        "MessageHeader": {
+          "MessageCategory": "Payment",
+          "MessageClass": "Service",
+          "MessageType": "Response",
+          "POIID": "P400Plus-804232069",
+          "ProtocolVersion": "3.0",
+          "SaleID": "POSiMac",
+          "ServiceID": "51"
+        },
+        "RepeatedResponseMessageBody": {
+          "PaymentResponse": {
+            "POIData": {
+              "POIReconciliationID": "1000",
+              "POITransactionID": {
+                "TimeStamp": "2022-02-04T18:28:05.000Z",
+                "TransactionID": "DTPS001643999285002.G6G35MGKZF9WHD82"
+              }
+            },
+            "PaymentReceipt": [
+              {
+                "DocumentQualifier": "CashierReceipt",
+                "OutputContent": {
+                  "OutputFormat": "Text",
+                  "OutputText": [
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "key=header1"
+                    },
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "key=header2"
+                    },
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "name=MERCHANT%20COPY&key=merchantTitle"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Date&value=04.02.2022&key=txdate"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Time&value=19%3a28%3a05&key=txtime"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Card&value=%2a%2a%2a%2a0036&key=pan"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=PAN%20seq.&value=01&key=panSeq"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Pref.%20name&value=MASTERCARD&key=preferredName"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Card%20type&value=mc&key=cardType"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Payment%20method&value=mc&key=paymentMethod"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Payment%20variant&value=mc&key=paymentMethodVariant"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Entry%20mode&value=Contactless%20chip&key=posEntryMode"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=AID&value=A0000000041010&key=aid"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=MID&value=1000&key=mid"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=TID&value=P400Plus-804232069&key=tid"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=PTID&value=62316662&key=ptid"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Auth.%20code&value=123456&key=authCode"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Tender&value=DTPS001643999285002&key=txRef"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Reference&value=51&key=mref"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Type&value=GOODS_SERVICES&key=txtype"
+                    },
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "name=TOTAL&value=%e2%82%ac%201%2c00&key=totalAmount"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "name=APPROVED&key=approved"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    }
+                  ]
+                },
+                "RequiredSignatureFlag": false
+              },
+              {
+                "DocumentQualifier": "CustomerReceipt",
+                "OutputContent": {
+                  "OutputFormat": "Text",
+                  "OutputText": [
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "key=header1"
+                    },
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "key=header2"
+                    },
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "name=KOPIE%20KARTENINHABER&key=cardholderHeader"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Datum&value=04.02.2022&key=txdate"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Uhrzeit&value=19%3a28%3a05&key=txtime"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Karte&value=%2a%2a%2a%2a0036&key=pan"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=PAN%20seq.&value=01&key=panSeq"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Bev.%20Name&value=MASTERCARD&key=preferredName"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Kartentyp&value=mc&key=cardType"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Zahlungsmethode&value=mc&key=paymentMethod"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Payment%20variant&value=mc&key=paymentMethodVariant"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Eingabemodus&value=Kontaktloser%20Chip&key=posEntryMode"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=AID&value=A0000000041010&key=aid"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=MID&value=1000&key=mid"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=TID&value=P400Plus-804232069&key=tid"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=PTID&value=62316662&key=ptid"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Auth.%20code&value=123456&key=authCode"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Tender&value=DTPS001643999285002&key=txRef"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Referenz&value=51&key=mref"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Typ&value=WAREN_DIENSTLEISTUNGEN&key=txtype"
+                    },
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "name=Summe&value=%e2%82%ac%201%2c00&key=totalAmount"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "CharacterStyle": "Bold",
+                      "EndOfLineFlag": true,
+                      "Text": "name=Genehmigt&key=approved"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "key=filler"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=F%c3%bcr%20Ihre%20Unterlagen&key=retain"
+                    },
+                    {
+                      "EndOfLineFlag": true,
+                      "Text": "name=Vielen%20Dank&key=thanks"
+                    }
+                  ]
+                },
+                "RequiredSignatureFlag": false
+              }
+            ],
+            "PaymentResult": {
+              "AmountsResp": {
+                "AuthorizedAmount": 1,
+                "Currency": "EUR"
+              },
+              "CustomerLanguage": "de",
+              "OnlineFlag": true,
+              "PaymentAcquirerData": {
+                "AcquirerPOIID": "P400Plus-804232069",
+                "AcquirerTransactionID": {
+                  "TimeStamp": "2022-02-04T18:28:05.000Z",
+                  "TransactionID": "G6G35MGKZF9WHD82"
+                },
+                "ApprovalCode": "123456",
+                "MerchantID": "ScheidtAndBachmannSlovenskoPOS"
+              },
+              "PaymentInstrumentData": {
+                "CardData": {
+                  "CardCountryCode": "276",
+                  "EntryMode": ["Contactless"],
+                  "MaskedPan": "541333 **** 0036",
+                  "PaymentBrand": "mc",
+                  "SensitiveCardData": {
+                    "CardSeqNumb": "01",
+                    "ExpiryDate": "1225"
+                  }
+                },
+                "PaymentInstrumentType": "Card"
+              }
+            },
+            "Response": {
+              "AdditionalResponse": "AID=A0000000041010&tid=62316662&transactionLanguage=de&transactionType=GOODS_SERVICES&backendGiftcardIndicator=false&posadditionalamounts.originalAmountValue=100&expiryYear=2025&acquirerResponseCode=APPROVED&giftcardIndicator=false&posAmountGratuityValue=0&paymentMethodVariant=mc&pspReference=G6G35MGKZF9WHD82&applicationPreferredName=MASTERCARD&cardType=mc&iso8601TxDate=2022-02-04T18%3a28%3a05.0000000%2b0000&offline=false&posOriginalAmountValue=100&txtime=19%3a28%3a05&paymentMethod=mc&txdate=04-02-2022&startYear=2004&tc=2F85598416EEF5DE&applicationLabel=MC&cardIssueNumber=1&cardSummary=0036&expiryMonth=12&merchantReference=51&mid=1000&posadditionalamounts.originalAmountCurrency=EUR&transactionReferenceNumber=G6G35MGKZF9WHD82&note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only&posAuthAmountCurrency=EUR&cardHolderVerificationMethodResults=1F0302&cardIssuerCountryId=276&posAmountCashbackValue=0&posEntryMode=CLESS_CHIP&startMonth=01&cardBin=541333&cardScheme=mc&posAuthAmountValue=100",
+              "Result": "Success"
+            },
+            "SaleData": {
+              "SaleTransactionID": {
+                "TimeStamp": "2022-02-04T18:28:04.799Z",
+                "TransactionID": "51"
+              }
+            }
+          }
+        }
+      },
+      "Response": {
+        "AdditionalResponse": "note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only",
+        "Result": "Success"
+      }
+    }
+  }
+}

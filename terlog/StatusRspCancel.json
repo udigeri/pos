@@ -1,0 +1,67 @@
+{
+  "SaleToPOIResponse": {
+    "MessageHeader": {
+      "MessageCategory": "TransactionStatus",
+      "MessageClass": "Service",
+      "MessageType": "Response",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac",
+      "ServiceID": "34"
+    },
+    "TransactionStatusResponse": {
+      "MessageReference": {
+        "MessageCategory": "Payment",
+        "SaleID": "POSiMac",
+        "ServiceID": "31"
+      },
+      "RepeatedMessageResponse": {
+        "MessageHeader": {
+          "MessageCategory": "Payment",
+          "MessageClass": "Service",
+          "MessageType": "Response",
+          "POIID": "P400Plus-804232069",
+          "ProtocolVersion": "3.0",
+          "SaleID": "POSiMac",
+          "ServiceID": "31"
+        },
+        "RepeatedResponseMessageBody": {
+          "PaymentResponse": {
+            "POIData": {
+              "POIReconciliationID": "1000",
+              "POITransactionID": {
+                "TimeStamp": "2022-02-04T18:19:45.000Z",
+                "TransactionID": "DTPS001643998785000"
+              }
+            },
+            "PaymentResult": {
+              "PaymentAcquirerData": {
+                "AcquirerPOIID": "P400Plus-804232069",
+                "MerchantID": "ScheidtAndBachmannSlovenskoPOS"
+              },
+              "PaymentInstrumentData": {
+                "CardData": {},
+                "PaymentInstrumentType": "Card"
+              }
+            },
+            "Response": {
+              "AdditionalResponse": "refusalReason=108%20Shopper%20cancelled%20tx&tid=62316662&transactionType=GOODS_SERVICES&posadditionalamounts.originalAmountValue=100&giftcardIndicator=false&posAmountGratuityValue=0&iso8601TxDate=2022-02-04T18%3a19%3a45.0000000%2b0000&posOriginalAmountValue=100&txtime=19%3a19%3a45&txdate=04-02-2022&merchantReference=31&posadditionalamounts.originalAmountCurrency=EUR&note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only&posAuthAmountCurrency=EUR&message=108%20Shopper%20cancelled%20tx&posAmountCashbackValue=0&posAuthAmountValue=100",
+              "ErrorCondition": "Cancel",
+              "Result": "Failure"
+            },
+            "SaleData": {
+              "SaleTransactionID": {
+                "TimeStamp": "2022-02-04T18:19:45.016Z",
+                "TransactionID": "31"
+              }
+            }
+          }
+        }
+      },
+      "Response": {
+        "AdditionalResponse": "note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only",
+        "Result": "Success"
+      }
+    }
+  }
+}

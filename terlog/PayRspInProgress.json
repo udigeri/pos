@@ -1,0 +1,20 @@
+{
+  "SaleToPOIResponse": {
+    "MessageHeader": {
+      "MessageCategory": "TransactionStatus",
+      "MessageClass": "Service",
+      "MessageType": "Response",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac",
+      "ServiceID": "243"
+    },
+    "TransactionStatusResponse": {
+      "Response": {
+        "AdditionalResponse": "status=Uncompleted%20transaction&detailedStatus=INTERNAL%20STATE&note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only",
+        "ErrorCondition": "InProgress",
+        "Result": "Failure"
+      }
+    }
+  }
+}

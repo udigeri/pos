@@ -1,0 +1,18 @@
+{
+  "SaleToPOIRequest": {
+    "EventNotification": {
+      "EventDetails": "oldstate=SHOPPER_INTERACTION&newstate=IDLE",
+      "EventToNotify": "Initialised",
+      "TimeStamp": "2022-02-05T10:55:44.036Z"
+    },
+    "MessageHeader": {
+      "DeviceID": "10",
+      "MessageCategory": "Event",
+      "MessageClass": "Event",
+      "MessageType": "Notification",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac"
+    }
+  }
+}
