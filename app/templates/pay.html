@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>InOut | Pay</title>
+  <link rel="icon" href="../static/favicon.ico" sizes="16x16"> 
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <h1><a href="{{ url_for('index') }}">InOut Parking lot</a></h1>
+    <div class="metanav">
+      {% if not session.logged_in %}
+        <a href="{{ url_for('login') }}">log in</a>
+      {% else %}
+        <a href="{{ url_for('logout') }}">log out</a>
+      {% endif %}
+    </div>
+
+    <div id="fade">
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+        {% if category == "error" %}
+          <div class="error">{{ message }}</div>
+        {% else %}
+          <div class="flash">{{ message }}</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if session.logged_in %}
+    <div class="flex-container">
+      <div class="flex-item-left">
+        <h3>Parking Place:</h3> 
+        <h3>LPN:</h3> 
+        <h3>Total:</h3> 
+      </div>
+      <div class="flex-item-center">
+        <h3>{{ customer.id|safe }}</h3>
+        <h3>{{ customer.lpn|safe }}</h3>
+        <h3>{{ customer.display_amount|safe }} EUR</h3>
+      </div>
+      <div class="flex-item-right">
+        <div class="lpn">
+          <form action="{{ url_for('cart') }}" method="post" class="action">
+            <input name="pp" type="hidden" value="{{ customer.id|safe }}">
+            <input name="lpn" type="hidden" value="{{ customer.lpn|safe }}">
+            <input name="amount" type="hidden" value="{{ customer.amount|safe }}">
+            <input type="submit" name="button" value="Pay">
+            <input type="submit" name="button" value="Pay & Tokenize">
+            <input type="submit" name="button" value="Pay with Token">
+            <input type="submit" name="button" value="Refund">
+            {% if customer.amount == "0" %}
+              <input type="submit" name="button" value="Tokenize">
+              <input type="submit" name="button" value="Validate Token">
+              <input type="submit" name="button" value="Delete Token">
+            {% endif %}
+            <!--
+            <input type="submit" name="button" value="Status">
+            -->
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <p style="text-align: center; font-size: 50px;">
+      <img src="../static/parking_place.jpg" alt="..." width="626" height="626" usemap="#parkingmap" />
+      {% if session.logged_in %}
+        <map name="parkingmap">
+          <area shape="rect" coords="170,50,260,250" href="{{ url_for('ParkPlace_1') }}" alt="ZA 864KL" >
+          <area shape="rect" coords="285,50,375,250" href="{{ url_for('ParkPlace_2') }}" alt="BL 235PP" >
+          <area shape="rect" coords="395,50,485,250" href="{{ url_for('ParkPlace_3') }}" alt="BY 698LT" >
+          <area shape="rect" coords="505,50,600,250" href="{{ url_for('ParkPlace_4') }}" alt="FREE">
+          <area shape="rect" coords="170,375,260,570" href="{{ url_for('ParkPlace_5') }}" alt="MG TW777">
+          <area shape="rect" coords="285,375,375,570" href="{{ url_for('ParkPlace_6') }}" alt="3 SAM 123">
+          <area shape="rect" coords="395,375,485,570" href="{{ url_for('ParkPlace_7') }}" alt="FREE">
+          <area shape="rect" coords="505,375,600,570" href="{{ url_for('ParkPlace_8') }}" alt="KY 68 WZM">
+        </map>
+      {% endif %}
+    </p>
+
+    {% block body %}{% endblock %}
+
+  </div>
+  <script type="text/javascript" src="{{url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

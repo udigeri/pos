@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>InOut | Cart</title>
+  <link rel="icon" href="../static/favicon.ico" sizes="16x16"> 
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <h1><a href="{{ url_for('index') }}">InOut Parking lot</a> - Shopping cart</h1>
+    <div class="metanav">
+      {% if not session.logged_in %}
+        <a href="{{ url_for('login') }}">log in</a>
+      {% else %}
+        <a href="{{ url_for('logout') }}">log out</a>
+      {% endif %}
+    </div>
+
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+      {% if category == "error" %}
+        <div class="error">{{ message }}</div>
+      {% else %}
+        <div class="flash">{{ message }}</div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="summary">
+      <table>
+        <th>Summary</th>
+        <tr><td>Parking Ticket</td><td>2.50</td><td>EUR</td></tr>
+        <tr><td>Payment fee</td><td>0.00</td><td>EUR</td></tr>
+        <tr><td>----------------------</td><td>-------</td><td>---</td></tr>
+        <tr><td>Total</td><td>2.50</td><td>EUR</td></tr>
+      </table>
+    </div>
+
+    <div class="summary">
+      <table>
+        <th>Method</th>
+        <tr>Parking ticket 2.50 EUR</tr>
+        <tr>Payment fee 0.00 EUR</tr>
+        <tr>-----------------------</tr>
+        <tr>Total 2.50 EUR</tr>
+      </table>
+    </div>
+
+    <ul class="entries">
+      {% for id in range(len) %}
+      <li class="entry">
+        <h2 id="{{ id }}"><a href="{{ trx.trx_urls[id] }}">{{ trx.trx_methods[id] }} </a></h2>Fee: {{ trx.trx_fees[id] }} EUR
+      </li>
+      {% else %}
+        <li><em>No payment method exist.</em></li>
+      {% endfor %}
+    </ul>
+
+    {% block body %}{% endblock %}
+
+  </div>
+  <script type="text/javascript" src="{{url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

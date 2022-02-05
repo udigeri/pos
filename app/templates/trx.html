@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>InOut | Transaction</title>
+  <link rel="icon" href="../static/favicon.ico" sizes="16x16"> 
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <h1><a href="{{ url_for('index') }}">InOut Parking lot</a> - Transaction</h1>
+    <div class="metanav">
+      {% if not session.logged_in %}
+        <a href="{{ url_for('login') }}">log in</a>
+      {% else %}
+        <a href="{{ url_for('logout') }}">log out</a>
+      {% endif %}
+    </div>
+
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+      {% if category == "error" %}
+        <div class="error">{{ message }}</div>
+      {% else %}
+        <div class="flash">{{ message }}</div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="receipt">
+      <div class="receipt-item-left">Receipt</div>
+      <div class="receipt-item-right">{{ trx.local_time }}</div>
+
+      <div class="receipt-item-left">&nbsp;</div>
+      <div class="receipt-item-right">&nbsp;</div>
+
+      <div class="receipt-item-left">&nbsp;</div>
+      <div class="receipt-item-right">{{ trx.shop }}</div>
+      <div class="receipt-item-left">&nbsp;</div>
+      <div class="receipt-item-right">{{ trx.shopInfo }}</div>
+
+      <div class="receipt-item-left">&nbsp;</div>
+      <div class="receipt-item-right">&nbsp;</div>
+
+      <div class="receipt-item-left">-------------------</div>
+      <div class="receipt-item-right">&nbsp;</div>
+      <div class="receipt-item-left">&nbsp;</div>
+      <div class="receipt-item-right">{{ trx.reference }}</div>
+      <div class="receipt-item-left">{{ trx.reason }}</div>
+      <div class="receipt-item-right">{{ trx.lpn }}</div>
+      <div class="receipt-item-left">{{ trx.entry_time }}</div>
+      <div class="receipt-item-right">{{ trx.exit_time }}</div>
+      <div class="receipt-item-left">&nbsp;</div>
+      <div class="receipt-item-right">&nbsp;</div>
+      <div class="receipt-item-left">Amount</div>
+      <div class="receipt-item-right">{{ trx.getFormattedAmount(trx.amount) }} {{ trx.currency}} </div>
+      <div class="receipt-item-left">Fee</div>
+      <div class="receipt-item-right">0.00 {{ trx.currency}} </div>
+      <div class="receipt-item-left">VAT {{ trx.vat_percent }}%</div>
+      <div class="receipt-item-right">{{ trx.getFormattedAmount(trx.vat_amount) }} {{ trx.currency}}</div>
+      <div class="receipt-item-left">-------------------</div>
+      <div class="receipt-item-right">&nbsp;</div>
+      <div class="receipt-item-left">Total</div>
+      <div class="receipt-item-right">{{ trx.getFormattedAmount(trx.amount) }} {{ trx.currency}}</div>
+      <div class="receipt-item-left">&nbsp;</div>
+      <div class="receipt-item-right">&nbsp;</div>
+
+      <div class="receipt-item-left">ShoppingCart</div>
+      <div class="receipt-item-right">{{ trx.shoppingCartUuid }}</div>
+      <div class="receipt-item-left">Correlation</div>
+      <div class="receipt-item-right">{{ trx.correlationId }}</div>
+      <div class="receipt-item-left">Cost Centre</div>
+      <div class="receipt-item-right">{{ trx.costCentre }}</div>
+      <div class="receipt-item-left">Transaction</div>
+      <div class="receipt-item-right">{{ trx.trxId }}</div>
+      <div class="receipt-item-left">Date </div>
+      <div class="receipt-item-right">{{ trx.author_time }}</div>
+      <div class="receipt-item-left">Issuer</div>
+      <div class="receipt-item-right">{{ trx.mediaType }}</div>
+      <div class="receipt-item-left">PAN</div>
+      <div class="receipt-item-right">
+        {% if trx.maskedMediaId %} 
+          {{ trx.maskedMediaId }}
+        {% else %} 
+          -
+        {% endif %}
+      </div>
+        {% if trx.description %} 
+          <div class="receipt-item-left">Info</div>
+          <div class="receipt-item-right">{{ trx.description }}</div>
+        {% endif %}
+      <div class="receipt-item-left">&nbsp;</div>
+      <div class="receipt-item-right">&nbsp;</div>
+      <div class="receipt-item-left">Status</div>
+      <div class="receipt-item-right">{{ trx.status }}</div>
+    </div>
+
+    <div class="trx">
+      <form action="{{ url_for('trx_done') }}" method="post" class="action">
+        <input type="hidden" name="url" value="None" >
+        <input type="submit" value="Done">
+      </form>
+    </div>    
+
+    {% block body %}{% endblock %}
+
+  </div>
+  <script type="text/javascript" src="{{url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

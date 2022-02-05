@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "-e development",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "-e",
+                "development"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "-c configure",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "-c",
+                "./inout/configure.yml"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "-h",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "-h"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

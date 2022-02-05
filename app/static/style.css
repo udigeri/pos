@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  }
+  body {
+    font-family: sans-serif;
+    background: #eee;
+  }
+  
+  a, h1, h2 {
+    color: #454644;
+  }
+  
+  h1, h2 {
+    font-family: 'Segoe UI', serif;
+    text-shadow: 1px 1px 2px #837210;
+    margin: 0;
+  }
+  
+  p {
+    margin: 5px;
+  }
+  
+  h1 {
+    border-bottom: 2px solid #eee;
+    text-decoration: none;
+  }
+  
+  h2 {
+    font-size: 1.2em;
+  }
+  
+  .page {
+    margin: 2em auto;
+    width: 900px;
+    border: 5px solid #ccc;
+    padding: 0.8em;
+    background: white;
+  }
+  
+  .entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .entries li {
+    margin: 0.8em 1.2em;
+  }
+  
+  .entries li h2 {
+    margin-left: -1em;
+  }
+  
+  .add-entry {
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .add-entry dl {
+    font-weight: bold;
+  }
+  
+  .action {
+    font-size: 1.2em;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .flex-container h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0 4px 6px 0;
+    text-shadow: 2px 2px 4px #CCCCCC;
+  }
+
+  .flex-item-left {
+    padding: 10px;
+    flex: 40%;
+    text-align: right;
+  }
+  
+  .flex-item-center {
+    padding: 10px;
+    flex: 25%;
+  }
+    
+  .flex-item-right {
+    padding: 10px;
+    flex: 35%;
+  }
+    
+  .lpn input[type=submit] {
+    width: 100%;
+    background-color: #595a56;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    padding: 8px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .lpn input[type=submit]:hover {
+    background-color: #cac846;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .method {
+    margin: 10px;
+  }
+  
+  .method img{
+    margin-left: 50px;
+    position: fixed;
+  }
+  
+  .method input[type="radio"] {
+    opacity: 50;
+    margin-top: 23px;
+    position: fixed;
+    width: 10;
+    vertical-align: middle;
+  }
+  
+  .method label {
+    display: inline-block;
+    font-family: 'Segoe UI', serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 10px 10px 130px;
+    vertical-align: top;
+  }
+  
+  .method input[type=submit] {
+    width: 100%;
+    background-color: #595a56;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    padding: 8px 20px;
+    margin: 15px 0 0 0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .method input[type=submit]:hover {
+    background-color: #cac846;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .trx input[type=submit] {
+    width: 100%;
+    background-color: #595a56;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    padding: 8px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .trx input[type=submit]:hover {
+    background-color: #cac846;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .metanav {
+    text-align: right;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 0.3em;
+    margin-bottom: 1em;
+    background: #fafafa;
+  }
+  
+  .flash {
+    background: #d6f5d6;
+    padding: 0.5em;
+    border: 1px solid #AACBE2;
+  }
+  
+  .error {
+    background: #F0D6D6;
+    padding: 0.5em;
+  }
+
+  .receipt {
+    background: #ebeaea;
+    padding: 10px;
+    border: 1px solid #777777;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .receipt-item-left {
+    padding: 0 0 0 10px;
+    flex: 30%;
+    border-bottom: 1px dashed #ddd;
+  }
+  
+  .receipt-item-right {
+    text-align: right;
+    padding: 0 10px 0 0;
+    flex: 65%;
+    border-bottom: 1px solid #ddd;
+  }
+    

@@ -1,0 +1,37 @@
+development:
+  log_level: debug
+  log_file_path: ./inout.log 
+  web_port: 80
+  provider:
+    TrustCommerce:
+      tenant: pgs-testWeb2Pay
+      shop: shop-InOut
+      shopInfo: A. Bernolaka 72, Zilina
+      host: http://localhost:8080
+      # host: https://preprod-entervo-connectv2.scheidt-bachmann.net:8443
+      baseURL: /pgs/public/api/payment
+      successURL: http://localhost/approved
+      failureURL: http://localhost/declined
+      locale: en-GB
+      costCentre: 2014615
+      imageColor: true
+
+production:
+  log_level: info
+  log_file_path: ./inout.log
+  web_port: 80
+  provider:
+    TrustCommerce:
+      tenant: pgs-testNMI
+      shop: shop-InOut
+      shopInfo: A. Bernolaka 72, Zilina
+      #host: http://192.168.1.242:8080
+      # host: http://10.180.54.62:8280
+      host: http://localhost:8080
+      # host: https://preprod-entervo-connectv2.scheidt-bachmann.net:8443
+      baseURL: /pgs/public/api/payment
+      successURL: http://localhost/approved
+      failureURL: http://localhost/declined
+      locale: en-GB
+      costCentre: 2014615
+      imageColor: true
