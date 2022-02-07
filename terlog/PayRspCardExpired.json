@@ -1,0 +1,314 @@
+{
+  "SaleToPOIResponse": {
+    "MessageHeader": {
+      "MessageCategory": "Payment",
+      "MessageClass": "Service",
+      "MessageType": "Response",
+      "POIID": "P400Plus-804232069",
+      "ProtocolVersion": "3.0",
+      "SaleID": "POSiMac",
+      "ServiceID": "01"
+    },
+    "PaymentResponse": {
+      "POIData": {
+        "POIReconciliationID": "1000",
+        "POITransactionID": {
+          "TimeStamp": "2022-02-06T16:43:44.000Z",
+          "TransactionID": "DTPS001644165824000.FPNSSH5ZMP4WHD82"
+        }
+      },
+      "PaymentReceipt": [
+        {
+          "DocumentQualifier": "CashierReceipt",
+          "OutputContent": {
+            "OutputFormat": "Text",
+            "OutputText": [
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "key=header1"
+              },
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "key=header2"
+              },
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "name=MERCHANT%20COPY&key=merchantTitle"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Date&value=06.02.2022&key=txdate"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Time&value=17%3a43%3a44&key=txtime"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Card&value=%2a%2a%2a%2a1251&key=pan"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=PAN%20seq.&value=01&key=panSeq"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Pref.%20name&value=Visa&key=preferredName"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Card%20type&value=visa&key=cardType"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Payment%20method&value=visa&key=paymentMethod"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Payment%20variant&value=visa&key=paymentMethodVariant"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Entry%20mode&value=Contactless%20chip&key=posEntryMode"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=AID&value=A0000000031010&key=aid"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=MID&value=1000&key=mid"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=TID&value=P400Plus-804232069&key=tid"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=PTID&value=62316662&key=ptid"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Tender&value=DTPS001644165824000&key=txRef"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Reference&value=01&key=mref"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Type&value=GOODS_SERVICES&key=txtype"
+              },
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "name=TOTAL&value=%e2%82%ac%201%2c00&key=totalAmount"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "name=%21%21%21%20DECLINED%20%21%21%21&key=refused"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              }
+            ]
+          },
+          "RequiredSignatureFlag": false
+        },
+        {
+          "DocumentQualifier": "CustomerReceipt",
+          "OutputContent": {
+            "OutputFormat": "Text",
+            "OutputText": [
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "key=header1"
+              },
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "key=header2"
+              },
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "name=CARDHOLDER%20COPY&key=cardholderHeader"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Date&value=06.02.2022&key=txdate"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Time&value=17%3a43%3a44&key=txtime"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Card&value=%2a%2a%2a%2a1251&key=pan"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=PAN%20seq.&value=01&key=panSeq"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Pref.%20name&value=Visa&key=preferredName"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Card%20type&value=visa&key=cardType"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Payment%20method&value=visa&key=paymentMethod"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Payment%20variant&value=visa&key=paymentMethodVariant"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Entry%20mode&value=Contactless%20chip&key=posEntryMode"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=AID&value=A0000000031010&key=aid"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=MID&value=1000&key=mid"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=TID&value=P400Plus-804232069&key=tid"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=PTID&value=62316662&key=ptid"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Tender&value=DTPS001644165824000&key=txRef"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Reference&value=01&key=mref"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Type&value=GOODS_SERVICES&key=txtype"
+              },
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "name=TOTAL&value=%e2%82%ac%201%2c00&key=totalAmount"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "CharacterStyle": "Bold",
+                "EndOfLineFlag": true,
+                "Text": "name=%21%21%21%20DECLINED%20%21%21%21&key=refused"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "key=filler"
+              },
+              {
+                "EndOfLineFlag": true,
+                "Text": "name=Retain%20for%20your%20records&key=retain"
+              }
+            ]
+          },
+          "RequiredSignatureFlag": false
+        }
+      ],
+      "PaymentResult": {
+        "OnlineFlag": true,
+        "PaymentAcquirerData": {
+          "AcquirerPOIID": "P400Plus-804232069",
+          "AcquirerTransactionID": {
+            "TimeStamp": "2022-02-06T16:43:44.000Z",
+            "TransactionID": "FPNSSH5ZMP4WHD82"
+          },
+          "MerchantID": "ScheidtAndBachmannSlovenskoPOS"
+        },
+        "PaymentInstrumentData": {
+          "CardData": {
+            "EntryMode": ["Contactless"],
+            "MaskedPan": "441069 **** 1251",
+            "PaymentBrand": "visa",
+            "SensitiveCardData": {
+              "CardSeqNumb": "01",
+              "ExpiryDate": "0618"
+            }
+          },
+          "PaymentInstrumentType": "Card"
+        }
+      },
+      "Response": {
+        "AdditionalResponse": "AID=A0000000031010&refusalReason=228%20Card%20expired&tid=62316662&transactionType=GOODS_SERVICES&backendGiftcardIndicator=false&posadditionalamounts.originalAmountValue=100&expiryYear=2018&acquirerResponseCode=DECLINED&giftcardIndicator=false&posAmountGratuityValue=0&cardHolderName=%20%2f&paymentMethodVariant=visa&pspReference=FPNSSH5ZMP4WHD82&applicationPreferredName=Visa&cardType=visa&iso8601TxDate=2022-02-06T16%3a43%3a44.0000000%2b0000&offline=false&posOriginalAmountValue=100&txtime=17%3a43%3a44&paymentMethod=visa&txdate=06-02-2022&tc=63F914407D692D3A&applicationLabel=VISA&cardIssueNumber=1&cardSummary=1251&expiryMonth=06&merchantReference=01&mid=1000&posadditionalamounts.originalAmountCurrency=EUR&transactionReferenceNumber=FPNSSH5ZMP4WHD82&note=Direct%20API%20REQUIRES%20payload%20crypto%20on%20live%2c%20cleartext%20allowed%20for%20testing%20only&posAuthAmountCurrency=EUR&cardHolderVerificationMethodResults=3F0000&message=CARD_EXPIRED&posAmountCashbackValue=0&fundingSource=DEBIT&posEntryMode=CLESS_CHIP&cardBin=441069&cardScheme=visa&posAuthAmountValue=100",
+        "ErrorCondition": "Refusal",
+        "Result": "Failure"
+      },
+      "SaleData": {
+        "SaleTransactionID": {
+          "TimeStamp": "2022-02-06T16:43:40.842Z",
+          "TransactionID": "01"
+        }
+      }
+    }
+  }
+}
