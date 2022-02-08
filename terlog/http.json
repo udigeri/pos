@@ -1,0 +1,34 @@
+POST /nexo HTTP/1.1
+Host: 127.0.0.1:8443
+User-Agent: insomnia/2021.7.2
+Content-Type: application/json
+Accept: */*
+Content-Length: 521
+
+{
+	"SaleToPOIRequest": {
+		"MessageHeader": {
+			"ProtocolVersion": "3.0",
+			"MessageClass": "Service",
+			"MessageCategory": "Payment",
+			"MessageType": "Request",
+			"SaleID": "POSiMac",
+			"ServiceID": "61",
+			"POIID": "P400Plus-804232069"
+		},
+		"PaymentRequest": {
+			"SaleData": {
+				"SaleTransactionID": {
+					"TransactionID": "61",
+					"TimeStamp": "2022-02-07T20:53:43.402Z"
+				}
+			},
+			"PaymentTransaction": {
+				"AmountsReq": {
+					"Currency": "EUR",
+					"RequestedAmount": 1.00
+				}
+			}
+		}
+	}
+}
