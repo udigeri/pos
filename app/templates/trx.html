@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>InOut | Transaction</title>
+  <title>POS | Transaction</title>
   <link rel="icon" href="../static/favicon.ico" sizes="16x16"> 
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="page">
-    <h1><a href="{{ url_for('index') }}">InOut Parking lot</a> - Transaction</h1>
+    <h1><a href="{{ url_for('index') }}">POS</a> - Transaction</h1>
     <div class="metanav">
-      {% if not session.logged_in %}
-        <a href="{{ url_for('login') }}">log in</a>
-      {% else %}
-        <a href="{{ url_for('logout') }}">log out</a>
-      {% endif %}
     </div>
 
     {% for category, message in get_flashed_messages(with_categories=true) %}

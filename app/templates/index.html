@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>InOut</title>
+  <title>POS</title>
   <link rel="icon" href="../static/favicon.ico" sizes="16x16"> 
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="page">
-    <h1>Welcome to InOut Parking lot </h1>
+    <h1><a href="{{ url_for('index') }}">POS</a></h1>
     <div class="metanav">
-      {% if not session.logged_in %}
-        <a href="{{ url_for('login') }}">log in</a>
-      {% else %}
-        <a href="{{ url_for('logout') }}">log out</a>
-      {% endif %}
     </div>
 
     {% for category, message in get_flashed_messages(with_categories=true) %}
@@ -24,23 +19,21 @@
       {% endif %}
     {% endfor %}
 
+    {% block content %}{% endblock %}
+
     <p style="text-align: center; font-size: 50px;">
       <img src="../static/parking_place.jpg" alt="..." width="626" height="626" usemap="#parkingmap" />
-      {% if session.logged_in %}
-        <map name="parkingmap">
-          <area shape="rect" coords="170,50,260,250" href="{{ url_for('ParkPlace_1') }}" alt="ZA 864KL" >
-          <area shape="rect" coords="285,50,375,250" href="{{ url_for('ParkPlace_2') }}" alt="BL 235PP" >
-          <area shape="rect" coords="395,50,485,250" href="{{ url_for('ParkPlace_3') }}" alt="BY 698LT" >
-          <area shape="rect" coords="505,50,600,250" href="{{ url_for('ParkPlace_4') }}" alt="FREE">
-          <area shape="rect" coords="170,375,260,570" href="{{ url_for('ParkPlace_5') }}" alt="MG TW777">
-          <area shape="rect" coords="285,375,375,570" href="{{ url_for('ParkPlace_6') }}" alt="3 SAM 123">
-          <area shape="rect" coords="395,375,485,570" href="{{ url_for('ParkPlace_7') }}" alt="FREE">
-          <area shape="rect" coords="505,375,600,570" href="{{ url_for('ParkPlace_8') }}" alt="KY 68 WZM">
-        </map>
-      {% endif %}
+      <map name="parkingmap">
+        <area shape="rect" coords="170,50,260,250" href="{{ url_for('ParkPlace_1') }}" alt="ZA 864KL" >
+        <area shape="rect" coords="285,50,375,250" href="{{ url_for('ParkPlace_2') }}" alt="BL 235PP" >
+        <area shape="rect" coords="395,50,485,250" href="{{ url_for('ParkPlace_3') }}" alt="BY 698LT" >
+        <area shape="rect" coords="505,50,600,250" href="{{ url_for('ParkPlace_4') }}" alt="FREE">
+        <area shape="rect" coords="170,375,260,570" href="{{ url_for('ParkPlace_5') }}" alt="MG TW777">
+        <area shape="rect" coords="285,375,375,570" href="{{ url_for('ParkPlace_6') }}" alt="3 SAM 123">
+        <area shape="rect" coords="395,375,485,570" href="{{ url_for('ParkPlace_7') }}" alt="FREE">
+        <area shape="rect" coords="505,375,600,570" href="{{ url_for('ParkPlace_8') }}" alt="KY 68 WZM">
+      </map>
     </p>
-
-    {% block body %}{% endblock %}
 
     <ul class="entries">
       {% for entry in entries %}
@@ -49,7 +42,7 @@
         {{ entry.text|safe }}
       </li>
       {% else %}
-        <li><em>No entries yet. Add some!</em></li>
+        <li><em>No entries yet.</em></li>
       {% endfor %}
     </ul>
   </div>

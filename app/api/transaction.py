@@ -4,7 +4,7 @@ from random import randrange
 
 class Transaction():
     def __init__(self, pp, lpn, amount):
-        timestamp = datetime.now()
+        self.timestamp = datetime.now()
 
         self.action = None
         self.shoppingCartUuid = None
@@ -16,10 +16,10 @@ class Transaction():
         self.amount = int(amount)
         self.fee = None
         self.currency = "EUR"
-        self.local_time = timestamp.strftime("%Y%m%d%H%M%S")
-        self.exit_time = timestamp - timedelta(seconds=1)
+        self.local_time = self.timestamp.strftime("%m%d%H%M%S")
+        self.exit_time = self.timestamp - timedelta(seconds=1)
         self.exit_time = self.exit_time.strftime("%d.%m.%Y %H:%M:%S")
-        self.entry_time = timestamp - timedelta(hours=randrange(23), minutes=randrange(59))
+        self.entry_time = self.timestamp - timedelta(hours=randrange(23), minutes=randrange(59))
         self.entry_time = self.entry_time.strftime("%d.%m.%Y %H:%M:%S")
         self.author_time = None
         self.trxId = None

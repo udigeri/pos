@@ -1,74 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>InOut | Cart</title>
-  <link rel="icon" href="../static/favicon.ico" sizes="16x16"> 
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-  <div class="page">
-    <h1><a href="{{ url_for('index') }}">InOut Parking lot</a> - Shopping cart</h1>
-    <div class="metanav">
-      {% if not session.logged_in %}
-        <a href="{{ url_for('login') }}">log in</a>
-      {% else %}
-        <a href="{{ url_for('logout') }}">log out</a>
-      {% endif %}
-    </div>
+{% extends "index.html" %} 
 
-    {% for category, message in get_flashed_messages(with_categories=true) %}
-      {% if category == "error" %}
-        <div class="error">{{ message }}</div>
-      {% else %}
-        <div class="flash">{{ message }}</div>
-      {% endif %}
+{% block content %}
+<div class="summary">
+  <h3>
+    LPN: <em>{{ trx.lpn }}</em> Amount:
+    <em>{{ trx.getFormattedAmount(trx.amount) }} {{ trx.currency}}</em>
+  </h3>
+  {% if trx.shoppingCartUuid %}
+  <h5>Shopping cart: <em>{{ trx.shoppingCartUuid }}</em></h5>
+  {% endif %} {% if trx.clientHandleUuid %}
+  <h5>ClientHandle: <em>{{ trx.clientHandleUuid }}</em></h5>
+  {% endif %} {% if trx.pgsTokenUuid %}
+  <h5>Token: <em>{{ trx.pgsTokenUuid }}</em></h5>
+  {% endif %}
+</div>
+<hr />
+
+<div class="method">
+  {% if len %}
+  <h3>Payment method(s)</h3>
+  <form action="{{ url_for('pay') }}" method="post" class="action">
+    {% for id in range(len) %} {% if id == 0 %}
+    <input
+      type="radio"
+      id="{{"
+      id
+      }}
+      name="method_id"
+      value="{{"
+      id
+      }}
+      checked="checked"
+    />
+    {% else %}
+    <input type="radio" id="{{" id }} name="method_id" value="{{" id }} />
+    {% endif %}
+    <img src="{{trx.trx_imageUrls[id]}}" height="58" />
+    <label for="method_id">{{ trx.trx_methods[id] }}</label><br />
+    {% else %}
+    <li><em>No payment method exist.</em></li>
     {% endfor %}
-
-    <div class="summary">
-      <h3>LPN: <em>{{ trx.lpn }}</em> Amount: <em>{{ trx.getFormattedAmount(trx.amount) }} {{ trx.currency}}</em></h3>
-      {% if trx.shoppingCartUuid %}
-        <h5>Shopping cart: <em>{{ trx.shoppingCartUuid }}</em></h5>
-      {% endif %}
-      {% if trx.clientHandleUuid %}
-        <h5>ClientHandle: <em>{{ trx.clientHandleUuid }}</em></h5>
-      {% endif %}
-      {% if trx.pgsTokenUuid %}
-        <h5>Token: <em>{{ trx.pgsTokenUuid }}</em></h5>
-      {% endif %}
-    </div>
-    <hr>
-
-    <div class="method">
-      {% if len %}
-      <h3>Payment method(s)</h3>
-      <form action="{{ url_for('pay') }}" method="post" class="action">
-        {% for id in range(len) %}
-          {% if id == 0 %}
-          <input type="radio" id={{ id }} name="method_id" value={{ id }} checked="checked" >
-          {% else %}
-          <input type="radio" id={{ id }} name="method_id" value={{ id }} >
-          {% endif %}
-          <img src={{trx.trx_imageUrls[id]}}  height="58"/>
-          <label for="method_id">{{ trx.trx_methods[id] }}</label><br>
-        {% else %}
-          <li><em>No payment method exist.</em></li>
-        {% endfor %}
-        <input type="submit" value="Continue">
-      </form>
-      You will be redirected to choosen payment method of provider
-      {% else %}
-      <form action="{{ url_for('pay') }}" method="post" class="action">
-        <input type="hidden" id=0 name="method_id" value="None" >
-        <img src="../static/none.png" />
-        <label for="method_id">No payment method(s) exist</label><br>
-        <input type="submit" value="Back">
-      </form>
-      {% endif %}
-    </div>
-
-    {% block body %}{% endblock %}
-
-  </div>
-  <script type="text/javascript" src="{{url_for('static', filename='main.js') }}"></script>
-</body>
-</html>
+    <input type="submit" value="Continue" />
+  </form>
+  You will be redirected to choosen payment method of provider {% else %}
+  <form action="{{ url_for('pay') }}" method="post" class="action">
+    <input type="hidden" id="0" name="method_id" value="None" />
+    <img src="../static/none.png" />
+    <label for="method_id">No payment method(s) exist</label><br />
+    <input type="submit" value="Back" />
+  </form>
+  {% endif %}
+</div>
+{% endblock %}

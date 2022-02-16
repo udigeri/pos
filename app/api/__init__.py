@@ -1,6 +1,6 @@
 from .rest import Restful
-from .pgs import Pgs
+from .adn import Adn
 from .transaction import Transaction
 
-__all__ = ['Restful', 'Pgs', 'Transaction'] 
+__all__ = ['Restful', 'Adn', 'Transaction'] 
 

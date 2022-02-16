@@ -22,7 +22,7 @@
             "program": "${file}",
             "args": [
                 "-c",
-                "./inout/configure.yml"
+                "./pos/config.yml"
             ],
             "console": "integratedTerminal"
         },
